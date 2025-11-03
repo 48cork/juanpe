@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Aula - Introdução ao Manifesto Comunista</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .info-box strong {
+            color: #764ba2;
+        }
+        
+        .atividade {
+            background: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .atividade:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .atividade h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .numero {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .objetivo {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-weight: 600;
+            color: #0066cc;
+        }
+        
+        .passo {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .passo::before {
+            content: "▶";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-size: 0.8em;
+        }
+        
+        .medidas-list {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .medidas-list ol {
+            padding-left: 25px;
+        }
+        
+        .medidas-list li {
+            margin: 8px 0;
+            color: #664d00;
+        }
+        
+        .distribuicao {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .distribuicao h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        
+        .aula-box {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+        
+        .aula-box h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .adaptacoes {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .adaptacoes h2 {
+            color: #e65100;
+            margin-bottom: 20px;
+        }
+        
+        .turma-box {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 2px solid #ff9800;
+        }
+        
+        .dica-final {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px dashed #9c27b0;
+            text-align: center;
+            font-size: 1.1em;
+            color: #6a1b9a;
+        }
+        
+        .materiais {
+            background: #e1f5fe;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .materiais h3 {
+            color: #01579b;
+            margin-bottom: 10px;
+        }
+        
+        .materiais ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .materiais li::before {
+            content: "✓ ";
+            color: #0288d1;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .atividade {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .atividade h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Plano de Aula: Manifesto Comunista</h1>
+            <p class="subtitle">Introdução à Sociologia - UFCG</p>
+        </header>
+
+        <div class="info-box">
+            <p><strong>Disciplina:</strong> Introdução à Sociologia</p>
+            <p><strong>Professor:</strong> UFCG - Desde 2001</p>
+            <p><strong>Tema:</strong> Introdução ao Manifesto Comunista (Teoria Marxista)</p>
+            <p><strong>Turmas:</strong> Terça (19 alunos) e Quarta (45 alunos)</p>
+            <p><strong>Duração:</strong> 3 aulas (1 encontro semanal)</p>
+        </div>
+
+        <!-- ATIVIDADE 1 -->
+        <div class="atividade">
+            <h2><span class="numero">1</span> "Caça ao Fantasma" - Abertura Impactante</h2>
+            
+            <div class="objetivo">
+                🎯 Objetivo: Despertar curiosidade e apresentar o contexto histórico de 1848
+            </div>
+            
+            <p><strong>⏱️ Tempo:</strong> 30-40 minutos</p>
+            
+            <h3>Dinâmica:</h3>
+            
+            <div class="passo">
+                <strong>Passo 1:</strong> Leitura dramatizada da frase de abertura: <em>"Um espectro ronda a Europa — o espectro do comunismo"</em>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 2:</strong> Dividir a turma em 4-5 grupos:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Turma de 45: grupos de 9 alunos</li>
+                    <li>Turma de 19: grupos de 4-5 alunos</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 3:</strong> Cada grupo recebe um "fragmento histórico" diferente:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Revolução de 1848</li>
+                    <li>Condições dos trabalhadores nas fábricas</li>
+                    <li>A Liga dos Comunistas</li>
+                    <li>Outras correntes socialistas da época</li>
+                    <li>O medo das classes dominantes</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 4:</strong> Missão (15 minutos): Criar um "jornal sensacionalista" de 1848 com:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Manchete impactante</li>
+                    <li>Ilustração</li>
+                    <li>Breve texto sobre o tema</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 5:</strong> Apresentações rápidas (2-3 minutos cada grupo)
+            </div>
+            
+            <div class="materiais">
+                <h3>Materiais Necessários:</h3>
+                <ul>
+                    <li>Papel A3 ou folhas grandes</li>
+                    <li>Canetas coloridas</li>
+                    <li>Impressões com informações básicas para cada grupo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ATIVIDADE 2 -->
+        <div class="atividade">
+            <h2><span class="numero">2</span> "Tribunal da História" - Burguesia vs. Proletariado</h2>
+            
+            <div class="objetivo">
+                🎯 Objetivo: Compreender a luta de classes como motor da história
+            </div>
+            
+            <p><strong>⏱️ Tempo:</strong> 50-60 minutos</p>
+            
+            <h3>Dinâmica:</h3>
+            
+            <div class="passo">
+                <strong>Passo 1:</strong> Dividir a sala em 3 grupos:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Advogados da Burguesia</strong> (6-8 alunos) - Defendem o papel revolucionário da burguesia</li>
+                    <li><strong>Advogados do Proletariado</strong> (6-8 alunos) - Defendem a necessidade da revolução proletária</li>
+                    <li><strong>Júri Popular</strong> (restante) - Avaliam os argumentos</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 2:</strong> Questão central do julgamento: <em>"Quem é o verdadeiro agente transformador da sociedade moderna?"</em>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 3:</strong> Preparação (10 minutos):
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Grupo A prepara argumentos defendendo a burguesia (industrialização, fim do feudalismo, tecnologia)</li>
+                    <li>Grupo B prepara argumentos defendendo o proletariado (exploração, desigualdade, força de trabalho)</li>
+                    <li>Júri prepara perguntas para os dois lados</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 4:</strong> Rodadas do Tribunal:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Abertura dos advogados da Burguesia (5 min)</li>
+                    <li>Abertura dos advogados do Proletariado (5 min)</li>
+                    <li>Debate livre entre os grupos (15-20 min)</li>
+                    <li>Perguntas do júri (10 min)</li>
+                    <li>Veredicto e justificativa do júri (5 min)</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 5:</strong> Fechamento do professor: Explicar que Marx reconhecia que a burguesia FOI revolucionária (destruiu o feudalismo), MAS agora o proletariado deve fazer a nova revolução. Ambos têm papéis históricos!
+            </div>
+            
+            <div class="info-box">
+                <strong>💡 Dica para turma de 45:</strong> Faça dois júris simultâneos ou organize como plateia participante com direito a manifestações.
+            </div>
+        </div>
+
+        <!-- ATIVIDADE 3 -->
+        <div class="atividade">
+            <h2><span class="numero">3</span> "Linha do Tempo Viva" - As 10 Medidas</h2>
+            
+            <div class="objetivo">
+                🎯 Objetivo: Analisar as propostas práticas do Manifesto e sua atualidade
+            </div>
+            
+            <p><strong>⏱️ Tempo:</strong> 40-50 minutos</p>
+            
+            <h3>Dinâmica:</h3>
+            
+            <div class="passo">
+                <strong>Passo 1:</strong> Preparar o espaço da sala:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Parede ESQUERDA:</strong> "Essa proposta é ultrapassada, não faz mais sentido"</li>
+                    <li><strong>CENTRO da sala:</strong> "Essa proposta foi parcialmente realizada"</li>
+                    <li><strong>Parede DIREITA:</strong> "Essa proposta ainda é necessária/atual"</li>
+                </ul>
+            </div>
+            
+            <div class="medidas-list">
+                <strong>Passo 2:</strong> As 10 Medidas do Manifesto para distribuir (cada aluno ou dupla recebe uma):
+                <ol>
+                    <li>Expropriação da propriedade fundiária (acabar com propriedade privada da terra)</li>
+                    <li>Imposto fortemente progressivo (ricos pagam muito mais)</li>
+                    <li>Abolição do direito de herança</li>
+                    <li>Centralização do crédito (banco controlado pelo Estado)</li>
+                    <li>Centralização dos meios de comunicação e transporte pelo Estado</li>
+                    <li>Propriedade estatal das fábricas e meios de produção</li>
+                    <li>Cultivo de terras incultas e melhoramento do solo</li>
+                    <li>Trabalho obrigatório para todos</li>
+                    <li>Unificação do trabalho agrícola e industrial (fim da diferença cidade/campo)</li>
+                    <li>Educação pública e gratuita para todas as crianças</li>
+                </ol>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 3:</strong> Posicionamento:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Cada aluno/dupla lê sua medida</li>
+                    <li>Reflete: Isso ainda faz sentido hoje? Já existe? Está ultrapassado?</li>
+                    <li><strong>Levanta e vai para o lugar da sala</strong> que representa sua opinião</li>
+                    <li>Explica POR QUÊ escolheu aquele posicionamento</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 4:</strong> Discussão mediada:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Outros concordam? Discordam?</li>
+                    <li>Alguém quer mudar de posição após ouvir os colegas?</li>
+                    <li>Professor mostra exemplos: "Educação pública existe no Brasil! Imposto progressivo também! Mas propriedade privada continua..."</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 5:</strong> Twist final: Revelar que muitas dessas medidas "radicais" de 1848 foram parcialmente implementadas em democracias capitalistas!
+            </div>
+            
+            <div class="info-box">
+                <strong>🎯 Objetivo da atividade:</strong> Mostrar que algumas ideias "radicais" de 1848 hoje são "normais" (educação pública), outras foram parcialmente aplicadas (impostos progressivos), e outras nunca foram implementadas (fim da herança).
+            </div>
+        </div>
+
+        <!-- ATIVIDADE 4 -->
+        <div class="atividade">
+            <h2><span class="numero">4</span> "Meme Sociológico" - Síntese Criativa</h2>
+            
+            <div class="objetivo">
+                🎯 Objetivo: Síntese dos conceitos através de linguagem contemporânea
+            </div>
+            
+            <p><strong>⏱️ Tempo:</strong> 30-40 minutos</p>
+            
+            <h3>Dinâmica:</h3>
+            
+            <div class="passo">
+                <strong>Passo 1:</strong> Em grupos, criar <strong>memes</strong> ou <strong>cards para redes sociais</strong> explicando conceitos-chave:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Luta de classes</li>
+                    <li>Mais-valia (se já introduziu o conceito)</li>
+                    <li>Burguesia e proletariado</li>
+                    <li>Alienação</li>
+                    <li>Materialismo histórico</li>
+                    <li>"Proletários de todos os países, uni-vos!"</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 2:</strong> Regras para os memes:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>✅ Deve ser compreensível para quem NÃO leu o Manifesto</li>
+                    <li>✅ Precisa ter rigor conceitual</li>
+                    <li>✅ Pode (e deve!) usar humor</li>
+                </ul>
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 3:</strong> Galeria: Cole os memes na parede ou compartilhe (se tiverem celular)
+            </div>
+            
+            <div class="passo">
+                <strong>Passo 4:</strong> Votação: "Prêmio Karl Marx" para:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>🏆 Meme mais criativo</li>
+                    <li>🏆 Meme mais didático</li>
+                </ul>
+            </div>
+            
+            <div class="materiais">
+                <h3>Materiais Necessários:</h3>
+                <ul>
+                    <li>Papel e canetas coloridas OU</li>
+                    <li>Permitir uso de celular com apps de meme (Canva, Meme Generator, etc.)</li>
+                    <li>Fita adesiva para colar na parede</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DISTRIBUIÇÃO -->
+        <div class="distribuicao">
+            <h2>📅 Distribuição Sugerida das 3 Aulas</h2>
+            
+            <div class="aula-box">
+                <h3>AULA 1:</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Atividade 1: "Caça ao Fantasma" (30-40 min)</li>
+                    <li>Exposição teórica: Contexto histórico, estrutura do Manifesto, principais conceitos (resto da aula)</li>
+                </ul>
+            </div>
+            
+            <div class="aula-box">
+                <h3>AULA 2:</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Atividade 2: "Tribunal da História" (50-60 min)</li>
+                    <li>Aprofundamento teórico: Luta de classes, burguesia revolucionária (resto da aula)</li>
+                </ul>
+            </div>
+            
+            <div class="aula-box">
+                <h3>AULA 3:</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Atividade 3: "Linha do Tempo Viva" (40-50 min)</li>
+                    <li>Atividade 4: "Meme Sociológico" (30-40 min)</li>
+                    <li>Fechamento e conexões com atualidade (resto da aula)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ADAPTAÇÕES -->
+        <div class="adaptacoes">
+            <h2>🔧 Adaptações por Turma</h2>
+            
+            <div class="turma-box">
+                <h3>👥 Turma de 19 alunos (Terça):</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Discussões mais aprofundadas</li>
+                    <li>Todos participam ativamente de cada atividade</li>
+                    <li>Mais tempo para debate após cada apresentação</li>
+                    <li>Possibilidade de explorar nuances dos argumentos</li>
+                </ul>
+            </div>
+            
+            <div class="turma-box">
+                <h3>👥👥 Turma de 45 alunos (Quarta):</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Grupos maiores (9 alunos) ou mais grupos</li>
+                    <li>Apresentações mais sintéticas e objetivas</li>
+                    <li>Use a parede/quadro para organizar visualmente</li>
+                    <li>Considere nomear "moderadores" em cada grupo</li>
+                    <li>Na Atividade 3, pode agrupar medidas similares</li>
+                    <li>Prepare-se para mediar debates mais acalorados</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DICA FINAL -->
+        <div class="dica-final">
+            <strong>💡 Dica Final do Professor:</strong><br>
+            Tenha sempre o texto do Manifesto Comunista à mão para ler trechos específicos nos momentos oportunos. A força retórica de Marx funciona muito bem quando lida em voz alta! As frases de impacto podem pontuar perfeitamente cada atividade.
+        </div>
+
+        <footer>
+            <p><strong>Universidade Federal de Campina Grande - UFCG</strong></p>
+            <p>Disciplina: Introdução à Sociologia</p>
+            <p>Material didático - Plano de Aula sobre o Manifesto Comunista</p>
+        </footer>
+    </div>
+</body>
+</html>
